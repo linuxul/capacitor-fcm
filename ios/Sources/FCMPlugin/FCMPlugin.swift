@@ -13,7 +13,19 @@ import FirebaseInstallations
  * Created by Stewan Silva on 1/23/19.
  */
 @objc(FCMPlugin)
-public class FCMPlugin: CAPPlugin, MessagingDelegate {
+public class FCMPlugin: CAPPlugin, CAPBridgedPlugin, MessagingDelegate {
+    public let identifier = "FCMPlugin"
+    public let jsName = "FCM"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "subscribeTo", returnType: .promise),
+        CAPPluginMethod(name: "unsubscribeFrom", returnType: .promise),
+        CAPPluginMethod(name: "getToken", returnType: .promise),
+        CAPPluginMethod(name: "refreshToken", returnType: .promise),
+        CAPPluginMethod(name: "deleteInstance", returnType: .promise),
+        CAPPluginMethod(name: "setAutoInit", returnType: .promise),
+        CAPPluginMethod(name: "isAutoInitEnabled", returnType: .promise)
+    ]
+
     var fcmToken: String?
 
     override public func load() {

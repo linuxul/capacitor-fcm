@@ -132,6 +132,10 @@ Download the `google-services.json` file and copy it to `android/app/` directory
 - firebase
   - add the downloaded p8 file to firebase settings with noted key ID and the account team ID
 
+## Requirements
+
+This version requires the forked Capacitor 8 runtime (Kotlin on Android, Swift on iOS), iOS 17 or later and Android 13 (API 33) or later.
+
 ## iOS setup
 
 - [Install homebrew](https://capacitorjs.com/docs/getting-started/environment-setup#homebrew) _(once)_
@@ -160,7 +164,7 @@ Download the `google-services.json` file and copy it to `android/app/` directory
 
 If you need to implement opt-in behavior, you can disable the auto initialization of the library by following the [Firebase docs](https://firebase.google.com/docs/cloud-messaging/ios/client#prevent_auto_initialization).
 
-### SPM setup (iOS 15.0+)
+### SPM setup (iOS 17.0+)
 
 __First ensure all your dependencies are compatible with SPM. Otherwise, stick to the Cocoapods installation steps.__
 
