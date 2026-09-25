@@ -66,7 +66,7 @@ public class FCMPlugin : Plugin() {
                 if (!tokenResult.isSuccessful) {
                     val exception = tokenResult.exception
                     Log.w(TAG, "Fetching FCM registration token failed", exception)
-                    call.errorCallback(exception?.localizedMessage)
+                    call.reject(exception?.localizedMessage)
                     return@addOnCompleteListener
                 }
                 val data = JSObject()
